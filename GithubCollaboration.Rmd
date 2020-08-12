@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Protocols for Collaborating with the GandaLab Github account
 
-This protocol describes how members of the lab should interact with the GandaLab Github account for storing finished code and data on Github.
+This protocol describes how members of the lab should interact with the GandaLab Github account for storing finished code and data on Github. Also consult this blog post: https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/
 
 ## Terminology:  
 
@@ -26,6 +26,8 @@ This protocol describes how members of the lab should interact with the GandaLab
 
 ### Fork the GandaLab repo of interest
 At the GANDALAB page, navigate to the REPO and click “Fork”. This creates a clone of the REPO and creates a local REPO in YOU (your Github). 
+
+Navigate to the REPO stored in YOU (your Github). The URL should look something like: `github.com/YOU/REPO`.
 
 Click the green “Code” button and copy the URL of the REPO to your clipboard. Open RStudio and create a new project. Checkout the project from Version Control and select “Git”, then paste the REPO URL. 
 
@@ -41,7 +43,7 @@ First, type `git remote -v`. You should see something like this:
 `origin  https://github.com/EmilyB17/amr-heavymetal.git (fetch)`  
 `origin  https://github.com/EmilyB17/amr-heavymetal.git (push)`
 
-Then, type `git remote add upstream` followed by the URL of the master repo. This should be something like: `git remote add upstream https://github.com/gandalab/amr-heavymetal`.
+Then, type `git remote add upstream` followed by the URL of the master repo. This should be something like: `git remote add upstream https://github.com/gandalab/REPO`.
 
 Type `git remote -v` again. You should see something like this: 
 `origin  https://github.com/EmilyB17/amr-heavymetal.git (fetch)`
@@ -66,4 +68,7 @@ In the terminal, type `git add FILENAME`
 This stores the changes in Git. In the terminal, type `git commit FILENAME -m "MESSAGE"`. Note that the `-m` allows you to add a text line about the changes you are making. This is important - your commit message should be detailed to let your collaborators know what you changed.
 
 **3. Push your local changes** 
-To save the store the commits you made, type in the terminal:
+You have commited changes locally, so the next step is to push them to Github to *your local copy of the forked REPO*. In the terminal, type `git push origin BRANCHNAME`. 
+
+**4. Make a pull request to merge your changes to GANDALAB**
+In a web browser, navigate to the GANDALAB/REPO page. Click the "pull requests" tab and 
